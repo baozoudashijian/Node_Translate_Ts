@@ -1,15 +1,14 @@
 {
   "name": "zrj-fy",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "dependencies": {
     "commander": "^9.2.0",
     "global": "^4.4.0",
     "md5": "^2.3.0",
-    "randomstring": "^1.2.2",
-    "zrj-fy": "^0.0.5"
+    "randomstring": "^1.2.2"
   },
   "bin": {
-    "fy": "dist/cli.js"
+    "fy": "./dist/cli.js"
   },
   "files": [
     "dist/*.js"
