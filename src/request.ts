@@ -1,7 +1,7 @@
 import * as https from 'https';
 import * as querystring from 'querystring'
 import * as randomstring from 'randomstring'
-import * as md5 from 'md5'
+import md5 from 'md5';
 import { appid, serect } from './ak'
 
 function requestToTranslate(q: string) {
@@ -26,9 +26,13 @@ function requestToTranslate(q: string) {
         method: 'GET'
     };
 
+    type TransResult = {
+        trans_result: { dst: string } []
+    }
+
     const req = https.request(options, (res) => {
         res.on('data', (d) => {
-            let result = JSON.parse(d.toString())
+            let result: TransResult = JSON.parse(d.toString())
             result.trans_result.map((item) => {
                 console.log(item.dst)
             })
@@ -41,8 +45,9 @@ function requestToTranslate(q: string) {
     req.end();
 }
 // 生成签名
-function generateSign(appid, q, randomstr, serect) {
-    return md5(appid + q + randomstr + serect)
+function generateSign(appid: string, q: string, randomstr: string, serect: string) {
+    let concatstr: string = appid + q + randomstr + serect;
+    return md5(concatstr)
 }
 //
 function judgeTransDirection(str: string) {

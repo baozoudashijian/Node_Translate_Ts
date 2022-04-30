@@ -1,6 +1,6 @@
 import { requestToTranslate } from "./request"
 
-function translate(str) {
+function translate(str: string) {
     requestToTranslate(str)
 }
 

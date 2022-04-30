@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { Command } from 'commander';
 import { translate } from './main';
 const program = new Command();
@@ -5,7 +6,7 @@ const program = new Command();
 program
     .name('trans')
     .description('A simple translation tool')
-    .version(process.env.npm_package_version);
+    .version(process.env.npm_package_version as string);
 
 program
     .argument('<string>', 'Translation content')
