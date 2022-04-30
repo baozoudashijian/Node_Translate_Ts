@@ -23,5 +23,6 @@
   },
   "scripts": {
     "start": "npx ts-node-dev src/cli.ts"
-  }
+  },
+  "license": "Mit"
 }

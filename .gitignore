@@ -2,3 +2,4 @@
 yarn.lock
 .vscode
 /src/ak.ts
+/dist
